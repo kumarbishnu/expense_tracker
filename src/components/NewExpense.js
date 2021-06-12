@@ -1,7 +1,7 @@
 import {Button, Card, Col, Form, InputGroup, Row} from "react-bootstrap";
 import {useState} from "react";
 
-const NewExpense = () => {
+const NewExpense = props => {
 
     const [title, setTitle] = useState('');
     const [amount, setAmount] = useState('');
@@ -16,9 +16,9 @@ const NewExpense = () => {
         const expense = {
             title: title,
             amount: amount,
-            date: date,
+            date: new Date(date),
         }
-        console.log(expense);
+        props.onSave(expense);
         clearForm()
     }
 
