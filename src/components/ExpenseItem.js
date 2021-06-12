@@ -1,7 +1,7 @@
 import {Badge, Card, Col} from "react-bootstrap";
 import ExpenseDate from "./ExpenseDate";
 
-function ExpenseItem(props) {
+const ExpenseItem = props => {
 
     return <Card bg={"dark"} className="my-2 shadow-sm border-0">
         <Card.Body className="row align-items-center">

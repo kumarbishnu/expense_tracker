@@ -1,7 +1,8 @@
-import ExpenseItem from "./components/ExpenseItem";
+import Expenses from "./components/Expenses";
+import NewExpense from "./components/NewExpense";
 import {Container} from "react-bootstrap";
 
-function App() {
+const App = () => {
 
     const expenses = [
         {'id': '1', 'date': new Date(2021, 2, 14), 'title': 'Toilet Paper', 'amount': 94.12},
@@ -10,13 +11,11 @@ function App() {
         {'id': '4', 'date': new Date(2021, 5, 10), 'title': 'Car Insurance', 'amount': 249.7},
     ]
 
-    return (
-        <Container style={{minWidth: "40vw"}}>
-            {expenses.map(expense =>
-                <ExpenseItem expense={expense} />
-            )}
-        </Container>
-    );
+    return <Container className="w-50 mt-5">
+        <NewExpense />
+        <Expenses expenses={expenses} />
+    </Container>;
+
 }
 
 export default App;
